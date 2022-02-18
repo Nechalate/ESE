@@ -6,6 +6,9 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundMask;
     [SerializeField] float moveSpeed = 10f;
+    [SerializeField] float jumpHeight = 0.4f;
+    [SerializeField] AudioClip playerFootsteps;
+    AudioSource audioSource;
 
     float gravity = -9.8f;
     Vector3 velocity;
@@ -13,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     float groundDistance = 0.4f;
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -25,7 +28,9 @@ public class PlayerMovement : MonoBehaviour
 
         GroundPhysics();
         VectorInput();
+        FootSound();
         Fall();
+        Jumping();
     }
 
     void GroundPhysics() {
@@ -48,7 +53,16 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    void Jump() {
-        
+    void Jumping() {
+        if (Input.GetButtonDown("Jump") && isGround) {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+    }
+
+    void FootSound() {
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S)) {
+            if (!audioSource.isPlaying) audioSource.PlayOneShot(playerFootsteps);
+        }
+        else audioSource.Stop();
     }
 }
