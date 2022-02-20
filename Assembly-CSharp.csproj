@@ -36,7 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Doors\DoorSystem.cs" />
      <Compile Include="Assets\Scripts\Items\PickupKey.cs" />
+     <Compile Include="Assets\Scripts\Player\KeyControl.cs" />
      <Compile Include="Assets\Scripts\Player\MouseLook.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Reference Include="UnityEngine">
