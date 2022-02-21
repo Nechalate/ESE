@@ -11,6 +11,7 @@ public class DoorSystem : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+        animator.Play("Idle");
     }
     
     private void OnTriggerEnter(Collider other) {

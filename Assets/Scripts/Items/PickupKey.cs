@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +16,7 @@ public class PickupKey : MonoBehaviour
             if (audioSource.isPlaying != true) {
                 audioSource.PlayOneShot(pickupItemSound);
             }
+            other.GetComponent<KeyControl>().KeyHas = true;
             Destroy(gameObject, 0.5f);
         }
     }
