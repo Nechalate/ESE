@@ -202,6 +202,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  shiftSpeed: 10
   moveSpeed: 5
   jumpHeight: 1
   playerFootsteps: {fileID: 8300000, guid: 1a68c53cf4cdbcd42b7c7158edb0064f, type: 3}
@@ -567,6 +568,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639059919503539741, guid: 17f62685ec5c69346b25f5bfa0e168d9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1639059920206176498, guid: 17f62685ec5c69346b25f5bfa0e168d9,
         type: 3}
