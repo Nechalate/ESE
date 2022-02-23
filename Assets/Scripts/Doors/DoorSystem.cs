@@ -6,6 +6,7 @@ public class DoorSystem : MonoBehaviour
     [SerializeField] Animator animator;
     AudioSource audioSource;
     
+    bool checkOpenedDoor = true;
     
     void Start()
     {
@@ -24,6 +25,9 @@ public class DoorSystem : MonoBehaviour
 
     void OpenDoor() {
         animator.Play("DoorOpenLevel1");
-        audioSource.PlayOneShot(doorSound);
+        if (checkOpenedDoor) {
+            if (!audioSource.isPlaying) audioSource.PlayOneShot(doorSound);
+            checkOpenedDoor = false;
+        }
     }
 }
