@@ -36,14 +36,21 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BrokenParticles\BrokenParticles.cs" />
      <Compile Include="Assets\Scripts\Complex\FanScript.cs" />
-     <Compile Include="Assets\Scripts\Doors\BrokenParticles.cs" />
-     <Compile Include="Assets\Scripts\Doors\DoorSystem.cs" />
-     <Compile Include="Assets\Scripts\Doors\MainDoorClose.cs" />
-     <Compile Include="Assets\Scripts\Items\PickupKey.cs" />
+     <Compile Include="Assets\Scripts\Doors\EndDoor\endLeft.cs" />
+     <Compile Include="Assets\Scripts\Doors\EndDoor\endRight.cs" />
+     <Compile Include="Assets\Scripts\Doors\StandartDoor\DoorSystem.cs" />
+     <Compile Include="Assets\Scripts\Doors\StartDoor\MainDoorClose.cs" />
+     <Compile Include="Assets\Scripts\Items\Battery\BatteryOn.cs" />
+     <Compile Include="Assets\Scripts\Items\Battery\BatteryTaked.cs" />
+     <Compile Include="Assets\Scripts\Items\Keys\PickupKey.cs" />
+     <Compile Include="Assets\Scripts\Player\CursorLock.cs" />
      <Compile Include="Assets\Scripts\Player\KeyControl.cs" />
+     <Compile Include="Assets\Scripts\Player\LightIsOn.cs" />
      <Compile Include="Assets\Scripts\Player\MouseLook.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Player\SceneReload.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.35f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
