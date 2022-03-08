@@ -38,6 +38,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BrokenParticles\BrokenParticles.cs" />
      <Compile Include="Assets\Scripts\Complex\FanScript.cs" />
+     <Compile Include="Assets\Scripts\Complex\Transformator.cs" />
+     <Compile Include="Assets\Scripts\Doors\EndDoor\GatesSoundWorked.cs" />
      <Compile Include="Assets\Scripts\Doors\EndDoor\endLeft.cs" />
      <Compile Include="Assets\Scripts\Doors\EndDoor\endRight.cs" />
      <Compile Include="Assets\Scripts\Doors\StandartDoor\DoorSystem.cs" />
