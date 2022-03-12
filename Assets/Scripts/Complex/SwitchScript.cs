@@ -6,6 +6,7 @@ public class SwitchScript : MonoBehaviour
     [SerializeField] Animator _switchAnim;
     [SerializeField] GameObject controller;
     LightIsOn _light;
+    InteractiveScript _inter;
     AudioSource _audio;
     Animator _anim;
     bool check = false;
@@ -14,18 +15,21 @@ public class SwitchScript : MonoBehaviour
         _audio = GetComponent<AudioSource>();
         _anim = GetComponent<Animator>();
         _light = controller.GetComponent<LightIsOn>();
+        _inter = controller.GetComponent<InteractiveScript>();
     }
 
     void Start() {
         _anim.Play("IdleSwitch");
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerStay(Collider other) {
         if (other.tag == "Player" && _light.BatteryIsOn && !check) {
-            _light.LightWorking = true;
-            check = !check;
-            if (!_audio.isPlaying) _audio.PlayOneShot(_switchSound);
-            _anim.Play("SwitchOn");
+            if (_inter._interact) {
+                _light.LightWorking = true;
+                check = !check;
+                if (!_audio.isPlaying) _audio.PlayOneShot(_switchSound);
+                _anim.Play("SwitchOn");
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ public class BatteryTaked : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
              if (!_audio.isPlaying) _audio.PlayOneShot(_pickup);
-             Invoke("BatteryPickup", 1);
+             Invoke("BatteryPickup", 0.5f);
         }
     }
 
