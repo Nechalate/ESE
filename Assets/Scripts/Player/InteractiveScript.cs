@@ -10,17 +10,13 @@ public class InteractiveScript : MonoBehaviour
     }
 
     void Interact() {
-        if (!cheked) {
-            if (Input.GetKeyDown(KeyCode.E)) {
+            if (Input.GetKey(KeyCode.E)) {
             _interact = true;
-            cheked = true;
+            Invoke("InteractReturn", 0.3f);
             } 
-        }
-        Invoke("InteractReturn", 0.5f);
     }
 
     void InteractReturn() {
         _interact = false;
-        cheked = false;;
     }
 }
