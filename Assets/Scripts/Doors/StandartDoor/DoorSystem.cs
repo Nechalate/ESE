@@ -17,7 +17,7 @@ public class DoorSystem : MonoBehaviour
     
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
-            if (other.GetComponent<KeyControl>().KeyHas == true) {
+            if (other.GetComponent<KeyControl>().CardLevel1 == true) {
                 OpenDoor();
             }
         }

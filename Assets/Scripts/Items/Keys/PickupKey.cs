@@ -16,7 +16,7 @@ public class PickupKey : MonoBehaviour
             if (audioSource.isPlaying != true) {
                 audioSource.PlayOneShot(pickupItemSound);
             }
-            other.GetComponent<KeyControl>().KeyHas = true;
+            other.GetComponent<KeyControl>().CardLevel1 = true;
             Destroy(gameObject, 0.5f);
         }
     }

@@ -2,5 +2,5 @@
 
 public class KeyControl : MonoBehaviour
 {
-    public bool KeyHas;
+    public bool CardLevel1;
 }
