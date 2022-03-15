@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] Text _loadingText;
+    public float timeStart = 1;
     Text _loadTxt;
 
     public int loadLevel;
@@ -30,6 +31,7 @@ public class SceneLoader : MonoBehaviour
         while (!asyncLoad.isDone) {
             if (!asyncLoad.allowSceneActivation) {
                 _loadTxt.text = "Press any key";
+                Fade();
                 if (Input.anyKeyDown) asyncLoad.allowSceneActivation = true;
             }
             yield return null;
@@ -37,8 +39,11 @@ public class SceneLoader : MonoBehaviour
     }
 
     void Fade() {
-        _loadTxt.CrossFadeAlpha(0.0f, 0.5f, false);
-        
-        _loadTxt.CrossFadeAlpha(1.0f, 0.05f, false);
+        timeStart -= Time.deltaTime;
+        if (timeStart > 0) {
+            _loadTxt.CrossFadeAlpha(0.0f, 0.5f, false);
+        } else if (timeStart <= 0) {
+            _loadTxt.CrossFadeAlpha(1.0f, 0.05f, false);
+        } if (timeStart <= -1) timeStart = 1;
     }
 }
