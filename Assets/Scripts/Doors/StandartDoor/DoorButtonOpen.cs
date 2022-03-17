@@ -17,6 +17,7 @@ public class DoorButtonOpen : MonoBehaviour
         _interact = _player.GetComponent<InteractiveScript>();
     }
 
+
     void FixedUpdate() {
         DoorOpenAnim();
     }
