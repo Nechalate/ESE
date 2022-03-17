@@ -7,6 +7,7 @@ public class ElevatorMovement : MonoBehaviour
     [SerializeField] Animator _animElev;
     [SerializeField] GameObject _buttonObj;
     [SerializeField] GameObject _tranSleep;
+    [SerializeField] GameObject _controller;
     ElevetorButton _elevBut;
     Animator _anim;
     void Awake() {

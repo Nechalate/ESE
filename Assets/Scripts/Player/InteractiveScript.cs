@@ -4,6 +4,7 @@ public class InteractiveScript : MonoBehaviour
 {
     public bool _interact = false;
     bool cheked = false;
+    public bool openDoorReverse;
     void FixedUpdate()
     {
         Interact();
@@ -12,7 +13,9 @@ public class InteractiveScript : MonoBehaviour
     void Interact() {
             if (Input.GetKey(KeyCode.E)) {
             _interact = true;
-            Invoke("InteractReturn", 0.3f);
+            if (openDoorReverse) openDoorReverse = false;
+            else openDoorReverse = true;
+            Invoke("InteractReturn", 0.1f);
             } 
     }
 

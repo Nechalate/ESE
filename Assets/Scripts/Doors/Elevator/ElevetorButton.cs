@@ -22,7 +22,6 @@ public class ElevetorButton : MonoBehaviour
             if (_interactive._interact) {
                 _anim.Play("ButtonElevatorPush");
                 _buttonActivate = true;
-
             } 
         }
     }

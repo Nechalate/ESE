@@ -5,20 +5,16 @@ using UnityEngine;
 public class DoorButtonOpen : MonoBehaviour
 {
     [SerializeField] GameObject _doorButton;
-    [SerializeField] Vector3 startPosition;
-    [SerializeField] Vector3 endPosition;
+    [SerializeField] GameObject _player;
     [SerializeField] float step;
     public float doorSpeed = 1;
     private float progress;
-
     DoorSystemButton _button;
+    InteractiveScript _interact;
 
     void Awake() {
         _button = _doorButton.GetComponent<DoorSystemButton>();
-    }
-
-    void Start() {
-        transform.localPosition = startPosition;
+        _interact = _player.GetComponent<InteractiveScript>();
     }
 
     void FixedUpdate() {
@@ -26,12 +22,17 @@ public class DoorButtonOpen : MonoBehaviour
     }
 
     void DoorOpenAnim() {
-        if (_button.doorOpened) {
-            if (transform.localPosition.y <= 2.8f) {
-                transform.localPosition = new Vector3(0,progress, 0) * doorSpeed;
+        if (_button.doorOpened && !_interact.openDoorReverse) {
+            if (transform.localPosition.y <= 2.95f) {
+                transform.localPosition = new Vector3(transform.localPosition.x, progress, transform.localPosition.z) * doorSpeed;
                 progress += step;
             }
-            
+        }
+        else if (_button.doorOpened && _interact.openDoorReverse) {
+            if (transform.localPosition.y >= 0f) {
+                transform.localPosition = new Vector3(transform.localPosition.x, progress, transform.localPosition.z) * doorSpeed;
+                progress -= step;
+            }
         }
     }
 }
