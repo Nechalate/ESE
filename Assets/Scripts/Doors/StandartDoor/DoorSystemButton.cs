@@ -11,8 +11,10 @@ public class DoorSystemButton : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other) {
-        if (other.tag == "Player") {
-            if (_interact._interact) doorOpened = true;
-        }
+        if (other.tag == "Player") doorOpened = true;
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if (other.tag == "Player") doorOpened = false;;
     }
 }

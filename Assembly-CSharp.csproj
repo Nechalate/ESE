@@ -40,6 +40,7 @@
      <Compile Include="Assets\Scripts\Complex\FanScript.cs" />
      <Compile Include="Assets\Scripts\Complex\SwitchScript.cs" />
      <Compile Include="Assets\Scripts\Complex\Transformator.cs" />
+     <Compile Include="Assets\Scripts\Doors\DefaultDoor\DefaultDoor.cs" />
      <Compile Include="Assets\Scripts\Doors\Elevator\ElevatorMovement.cs" />
      <Compile Include="Assets\Scripts\Doors\Elevator\ElevetorButton.cs" />
      <Compile Include="Assets\Scripts\Doors\ElevatorDoor\Elevator.cs" />

@@ -12,14 +12,10 @@ public class InteractiveScript : MonoBehaviour
 
     void Interact() {
             if (Input.GetKey(KeyCode.E)) {
-            _interact = true;
-            if (openDoorReverse) openDoorReverse = false;
-            else openDoorReverse = true;
-            Invoke("InteractReturn", 0.1f);
+                if (!_interact) _interact = true;
+                    else _interact = false;
+                if (openDoorReverse) openDoorReverse = false;
+                    else openDoorReverse = true;
             } 
-    }
-
-    void InteractReturn() {
-        _interact = false;
     }
 }
