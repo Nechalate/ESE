@@ -7,6 +7,7 @@ public class DefaultDoor : MonoBehaviour
     [SerializeField] GameObject _secondDoor;
     [SerializeField] float step = 0.05f;
     public float doorSpeed = 1f;
+    [SerializeField] public bool checkCompleted;
     private float progress;
     private float _progress;
     DoorSystemButton _button;
@@ -23,10 +24,11 @@ public class DefaultDoor : MonoBehaviour
     {
         DoorOpen();
     }
+
     // -2.1f
     void DoorOpen() {
         if (_button.doorOpened) {
-            if (/*_interact._interact &&*/ !_interact.openDoorReverse) {
+            if (_interact._interact && !_interact.openDoorReverse) {
                 if (transform.localPosition.x <= 2.1f) {
                     transform.localPosition = new Vector3(progress, transform.localPosition.y, transform.localPosition.z) * doorSpeed;
                     progress += step;
@@ -36,7 +38,7 @@ public class DefaultDoor : MonoBehaviour
                     _progress -= step;
                 }
             }
-            else if (/*_interact._interact &&*/ _interact.openDoorReverse) {
+            else if (_interact._interact && _interact.openDoorReverse) {
                 if (transform.localPosition.x >= 0f) {
                     transform.localPosition = new Vector3(progress, transform.localPosition.y, transform.localPosition.z) * doorSpeed;
                     progress -= step;
@@ -49,3 +51,4 @@ public class DefaultDoor : MonoBehaviour
         }
     }
 }
+

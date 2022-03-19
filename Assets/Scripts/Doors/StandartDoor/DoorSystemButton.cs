@@ -2,12 +2,12 @@
 
 public class DoorSystemButton : MonoBehaviour
 {
-    [SerializeField] GameObject _controller;
-    InteractiveScript _interact;
+    //[SerializeField] GameObject _controller;
+    //InteractiveScript _interact;
     public bool doorOpened;
     
     void Awake() {
-        _interact = _controller.GetComponent<InteractiveScript>();
+        //_interact = _controller.GetComponent<InteractiveScript>();
     }
 
     private void OnTriggerStay(Collider other) {

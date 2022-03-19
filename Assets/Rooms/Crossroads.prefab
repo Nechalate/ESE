@@ -1554,6 +1554,7 @@ MonoBehaviour:
   _secondDoor: {fileID: 1339681729088757642}
   step: 0.01
   doorSpeed: 1
+  checkCompleted: 0
 --- !u!1 &1339681728334757158
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,9 +2209,17 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 0}
   m_IsSelectable: 1
-  m_SelectedFaces: 
-  m_SelectedEdges: []
-  m_SelectedVertices: 
+  m_SelectedFaces: 00000000
+  m_SelectedEdges:
+  - a: 0
+    b: 0
+  - a: 0
+    b: 0
+  - a: 0
+    b: 0
+  - a: 0
+    b: 0
+  m_SelectedVertices: 00000000000000000000000000000000
 --- !u!23 &1339681728713920898
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2923,7 +2932,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4b50e363ab0334a80197887279a9f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controller: {fileID: 0}
   doorOpened: 0
 --- !u!1 &1339681728935438338
 GameObject:
@@ -3205,9 +3213,17 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 0}
   m_IsSelectable: 1
-  m_SelectedFaces: 
-  m_SelectedEdges: []
-  m_SelectedVertices: 
+  m_SelectedFaces: 00000000
+  m_SelectedEdges:
+  - a: 0
+    b: 0
+  - a: 0
+    b: 0
+  - a: 0
+    b: 0
+  - a: 0
+    b: 0
+  m_SelectedVertices: 00000000000000000000000000000000
 --- !u!23 &1339681728964050125
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3286,6 +3302,7 @@ MonoBehaviour:
   _secondDoor: {fileID: 1339681728431022559}
   step: 0.01
   doorSpeed: 1
+  checkCompleted: 0
 --- !u!1 &1339681728988317301
 GameObject:
   m_ObjectHideFlags: 0
@@ -3969,7 +3986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4b50e363ab0334a80197887279a9f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controller: {fileID: 0}
   doorOpened: 0
 --- !u!1 &1339681729254581757
 GameObject:
@@ -4300,6 +4316,7 @@ MonoBehaviour:
   _secondDoor: {fileID: 1339681728713920902}
   step: 0.01
   doorSpeed: 1
+  checkCompleted: 0
 --- !u!1 &1339681729260666729
 GameObject:
   m_ObjectHideFlags: 0
@@ -6133,6 +6150,7 @@ MonoBehaviour:
   _secondDoor: {fileID: 1339681729938746685}
   step: 0.01
   doorSpeed: 1
+  checkCompleted: 0
 --- !u!1 &1339681729533722137
 GameObject:
   m_ObjectHideFlags: 0
@@ -6473,7 +6491,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4b50e363ab0334a80197887279a9f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controller: {fileID: 0}
   doorOpened: 0
 --- !u!1 &1339681729577765456
 GameObject:
@@ -6815,7 +6832,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4b50e363ab0334a80197887279a9f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controller: {fileID: 0}
   doorOpened: 0
 --- !u!1 &1339681729680503916
 GameObject:
@@ -6844,7 +6860,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339681729680503916}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 50, y: -1, z: 77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
