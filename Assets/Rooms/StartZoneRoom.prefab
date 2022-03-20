@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &894429984578766225
 Transform:
   m_ObjectHideFlags: 0
@@ -341,7 +341,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 0}
+  _reverseButton: {fileID: 0}
+  _reverseButtonTwo: {fileID: 0}
+  _openText: {fileID: 0}
   doorOpened: 0
+  reverseInteract: 0
 --- !u!1 &894429984620376041
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,9 +3420,17 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 0}
   m_IsSelectable: 1
-  m_SelectedFaces: 
-  m_SelectedEdges: []
-  m_SelectedVertices: 
+  m_SelectedFaces: 00000000
+  m_SelectedEdges:
+  - a: 0
+    b: 0
+  - a: 0
+    b: 0
+  - a: 0
+    b: 0
+  - a: 0
+    b: 0
+  m_SelectedVertices: 00000000000000000000000000000000
 --- !u!23 &894429984748519478
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4997,7 +5009,7 @@ GameObject:
   - component: {fileID: 894429985462833516}
   - component: {fileID: 894429985462833507}
   - component: {fileID: 894429985462833506}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StartZoneRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7139,7 +7151,7 @@ MonoBehaviour:
       m_Rotation: 0
       m_Anchor: 9
     m_Material: {fileID: 0}
-    m_SubmeshIndex: 0
+    m_SubmeshIndex: 2
     m_ManualUV: 0
     elementGroup: -1
     m_TextureGroup: -1
@@ -9198,9 +9210,93 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 0}
   m_IsSelectable: 1
-  m_SelectedFaces: 
-  m_SelectedEdges: []
-  m_SelectedVertices: 
+  m_SelectedFaces: 7b0000007900000076000000
+  m_SelectedEdges:
+  - a: 456
+    b: 454
+  - a: 455
+    b: 457
+  - a: 457
+    b: 456
+  - a: 454
+    b: 431
+  - a: 444
+    b: 430
+  - a: 431
+    b: 445
+  - a: 445
+    b: 444
+  - a: 418
+    b: 419
+  - a: 610
+    b: 608
+  - a: 609
+    b: 611
+  - a: 611
+    b: 610
+  - a: 474
+    b: 475
+  - a: 513
+    b: 474
+  - a: 608
+    b: 514
+  - a: 512
+    b: 513
+  - a: 594
+    b: 455
+  - a: 514
+    b: 595
+  - a: 595
+    b: 594
+  - a: 475
+    b: 54
+  - a: 430
+    b: 609
+  - a: 219
+    b: 220
+  - a: 54
+    b: 9
+  - a: 9
+    b: 219
+  - a: 220
+    b: 221
+  - a: 350
+    b: 418
+  - a: 221
+    b: 319
+  - a: 319
+    b: 350
+  - a: 30
+    b: 31
+  - a: 33
+    b: 30
+  - a: 174
+    b: 33
+  - a: 31
+    b: 512
+  - a: 419
+    b: 393
+  - a: 371
+    b: 174
+  - a: 393
+    b: 371
+  - a: 612
+    b: 613
+  - a: 614
+    b: 612
+  - a: 613
+    b: 615
+  - a: 615
+    b: 614
+  - a: 587
+    b: 588
+  - a: 589
+    b: 587
+  - a: 588
+    b: 590
+  - a: 590
+    b: 589
+  m_SelectedVertices: c6010000c7010000c8010000c9010000ad010000ae010000af010000bc010000bd010000a2010000a301000060020000610200006202000063020000da010000db01000001020000020200000002000052020000530200003600000037000000eb000000db000000dc00000009000000dd000000de0000005e0100003f0100001e0000001f0000002000000021000000ae000000af0000008901000073010000640200006502000066020000670200004b0200004c0200004d0200004e020000
 --- !u!23 &894429985462833516
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13796,7 +13892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7269732470160664887
 Transform:
   m_ObjectHideFlags: 0

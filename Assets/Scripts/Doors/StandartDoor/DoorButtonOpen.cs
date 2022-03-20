@@ -23,13 +23,13 @@ public class DoorButtonOpen : MonoBehaviour
     }
 
     void DoorOpenAnim() {
-        if (_button.doorOpened && !_interact.openDoorReverse) {
+        if (_button.doorOpened /* && !_interact.openDoorReverse */) {
             if (transform.localPosition.y <= 2.95f) {
                 transform.localPosition = new Vector3(transform.localPosition.x, progress, transform.localPosition.z) * doorSpeed;
                 progress += step;
             }
         }
-        else if (_button.doorOpened && _interact.openDoorReverse) {
+        else if (_button.doorOpened /* && _interact.openDoorReverse */) {
             if (transform.localPosition.y >= 0f) {
                 transform.localPosition = new Vector3(transform.localPosition.x, progress, transform.localPosition.z) * doorSpeed;
                 progress -= step;
