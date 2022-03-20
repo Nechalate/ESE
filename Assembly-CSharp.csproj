@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Menu\SceneLoader\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\Menu\StartGame.cs" />
      <Compile Include="Assets\Scripts\Player\CursorLock.cs" />
+     <Compile Include="Assets\Scripts\Player\FlashLightScript.cs" />
      <Compile Include="Assets\Scripts\Player\InteractiveScript.cs" />
      <Compile Include="Assets\Scripts\Player\KeyControl.cs" />
      <Compile Include="Assets\Scripts\Player\LightIsOn.cs" />
