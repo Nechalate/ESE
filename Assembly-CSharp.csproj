@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Doors\StandartDoor\DoorSystem.cs" />
      <Compile Include="Assets\Scripts\Doors\StandartDoor\DoorSystemButton.cs" />
      <Compile Include="Assets\Scripts\Doors\StartDoor\MainDoorClose.cs" />
+     <Compile Include="Assets\Scripts\Doors\UniversalDoorScript.cs" />
      <Compile Include="Assets\Scripts\Items\Battery\BatteryOn.cs" />
      <Compile Include="Assets\Scripts\Items\Battery\BatteryTaked.cs" />
      <Compile Include="Assets\Scripts\Items\Keys\PickupKey.cs" />

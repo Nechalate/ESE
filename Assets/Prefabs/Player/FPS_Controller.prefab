@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793996343}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.35000014, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.30000305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7384888821560471173}
@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 1562391114}
   - component: {fileID: 1562391118}
   - component: {fileID: 1562391119}
+  - component: {fileID: 1562391122}
   m_Layer: 0
   m_Name: FPS_Controller
   m_TagString: Player
@@ -484,6 +485,19 @@ MonoBehaviour:
   BatteryTake: 0
   BatteryIsOn: 0
   LightWorking: 0
+--- !u!114 &1562391122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7384888822070872137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5198d5f2b4125e24c89f5f8076aaf748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointLight: {fileID: 1793996345}
 --- !u!1 &7384888822595182866
 GameObject:
   m_ObjectHideFlags: 0

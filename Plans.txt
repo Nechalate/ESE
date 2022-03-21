@@ -47,12 +47,12 @@
 
 Готово (На коммит и пуш):
 -----
-1. Улучшенный фонарь
-2. Включение и выключение фонаря по клавише
+1. Create prototype himtec room.
+2. Added new sectors and universal door script
 
 
 -----
-fnaf, outlast, scp, poppy playtime
+fnaf, outlast, scp, poppy playtime, heilwald loophole, 
 -----
 
 
