@@ -23,6 +23,8 @@ public class UniversalDoorScript : MonoBehaviour
     private float start_dist_or_angle;
     private bool open_close_ON;
     public GameObject interaction_image;
+    public GameObject player;
+    private Transform _player;
 
     void Start() {
         if (open_type == open_type_ENUM.move_to_open) {
@@ -36,19 +38,21 @@ public class UniversalDoorScript : MonoBehaviour
             else if (door_axis == door_axis_ENUM.Z) start_dist_or_angle = transform.localEulerAngles.z;
         }
         if (door_handle) start_rot = door_handle.transform.localRotation;
+
+        _player = player.GetComponent<Transform>();
     }
 
-
+/*
     void OnMouseEnter() {
-        if (gameObject.tag == "Door") interaction_image.SetActive(true);
+        if (gameObject.tag == "Door" && (Vector3.Distance(transform.position, _player.position) <= 5f)) interaction_image.SetActive(true);
     }
 
     void OnMouseExit() {
-        if (gameObject.tag == "Door") interaction_image.SetActive(false);
+        if (gameObject.tag == "Door" && (Vector3.Distance(transform.position, _player.position) >= 5f)) interaction_image.SetActive(false);
     }
-
+*/
     void OnMouseDown() {
-        if (gameObject.tag == "Door") {
+        if (gameObject.tag == "Door" && (Vector3.Distance(transform.position, _player.position) <= 5f)) { 
             if (door_handle) {
                 if (handle_axis == handle_axis_ENUM.X) door_handle.transform.localRotation = Quaternion.Euler(handle_rot_angle, 0f, 0f);
                 else if (handle_axis == handle_axis_ENUM.Y) door_handle.transform.localRotation = Quaternion.Euler(0f, handle_rot_angle, 0f);
@@ -62,81 +66,109 @@ public class UniversalDoorScript : MonoBehaviour
         if (door_handle) door_handle.transform.localRotation = start_rot;
     }
 
-    void Update() {
-        if(open_close_ON) {
-            if (is_open) {
-                if (open_type == open_type_ENUM.move_to_open) {
-                    if (door_axis == door_axis_ENUM.X) {
+    void Update()
+    {
+        if(open_close_ON) 
+        {
+            if (is_open) 
+            {
+                if (open_type == open_type_ENUM.move_to_open) 
+                {
+                    if (door_axis == door_axis_ENUM.X) 
+                    {
                         float posX = Mathf.MoveTowards(transform.localPosition.x, start_dist_or_angle + open_dist_or_angle, open_speed * Time.deltaTime);
                         transform.localPosition = new Vector3(posX, transform.localPosition.y, transform.localPosition.z);
                         if (transform.localPosition.x == start_dist_or_angle + open_dist_or_angle) Stop_open_close();
                     }
-                    else if (door_axis == door_axis_ENUM.Y) {
+                    else if (door_axis == door_axis_ENUM.Y) 
+                    {
                         float posY = Mathf.MoveTowards(transform.localPosition.x, start_dist_or_angle + open_dist_or_angle, open_speed * Time.deltaTime);
                         transform.localPosition = new Vector3(transform.localPosition.x, posY, transform.localPosition.z);
                         if (transform.localPosition.y == start_dist_or_angle + open_dist_or_angle) Stop_open_close();
                     }
-                    else if (door_axis == door_axis_ENUM.Z) {
+                    else if (door_axis == door_axis_ENUM.Z) 
+                    {
                         float posZ = Mathf.MoveTowards(transform.localPosition.z, start_dist_or_angle + open_dist_or_angle, open_speed * Time.deltaTime);
                         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, posZ);
                         if (transform.localPosition.z == start_dist_or_angle + open_dist_or_angle) Stop_open_close();
                     }
                 }
+                else 
+                {
+                    if (door_axis == door_axis_ENUM.X) 
+                    {
+                        float angleX = Mathf.MoveTowardsAngle(transform.localEulerAngles.x, start_dist_or_angle + open_dist_or_angle, open_speed * Time.deltaTime);
+                        transform.localEulerAngles = new Vector3(angleX, 0, 0);
+                        if (transform.localEulerAngles.x == start_dist_or_angle + open_dist_or_angle) Stop_open_close();
+                    }
+                    else if (door_axis == door_axis_ENUM.Y) 
+                    {
+                        float angleY = Mathf.MoveTowardsAngle(transform.localEulerAngles.y, start_dist_or_angle + open_dist_or_angle, open_speed * Time.deltaTime);
+                        transform.localEulerAngles = new Vector3(angleY, 0, 0);
+                        if (transform.localEulerAngles.y == start_dist_or_angle + open_dist_or_angle) Stop_open_close();
+                    }
+                    else if (door_axis == door_axis_ENUM.Z) 
+                    {
+                        float angleZ = Mathf.MoveTowardsAngle(transform.localEulerAngles.z, start_dist_or_angle + open_dist_or_angle, open_speed * Time.deltaTime);
+                        transform.localEulerAngles = new Vector3(angleZ, 0, 0);
+                        if (transform.localEulerAngles.z == start_dist_or_angle + open_dist_or_angle) Stop_open_close();
+                    }
+                }
             }
-            else {
-                if (door_axis == door_axis_ENUM.X) {
-                    float angleX = Mathf.MoveTowardsAngle(transform.localEulerAngles.x, start_dist_or_angle + open_dist_or_angle, open_speed * Time.deltaTime);
-                    transform.localEulerAngles = new Vector3(angleX, 0, 0);
-                    if (transform.localEulerAngles.x == start_dist_or_angle + open_dist_or_angle) Stop_open_close();
+            else 
+            {
+                if (open_type == open_type_ENUM.move_to_open) 
+                {
+                    if (door_axis == door_axis_ENUM.X) 
+                    {
+                        float posX = Mathf.MoveTowards(transform.localPosition.x, start_dist_or_angle, open_speed * Time.deltaTime);
+                        transform.localPosition = new Vector3(posX, transform.localPosition.y, transform.localPosition.z);
+                        if (transform.localPosition.x == start_dist_or_angle) Stop_open_close();
+                    }
+                    else if (door_axis == door_axis_ENUM.Y) 
+                    {
+                        float posY = Mathf.MoveTowards(transform.localPosition.y, start_dist_or_angle, open_speed * Time.deltaTime);
+                        transform.localPosition = new Vector3(transform.localPosition.x, posY, transform.localPosition.z);
+                        if (transform.localPosition.y == start_dist_or_angle) Stop_open_close();
+                    }
+                    else if (door_axis == door_axis_ENUM.Z) 
+                    {
+                        float posZ = Mathf.MoveTowards(transform.localPosition.z, start_dist_or_angle, open_speed * Time.deltaTime);
+                        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, posZ);
+                        if (transform.localPosition.z == start_dist_or_angle) Stop_open_close();
+                    }
                 }
-                else if (door_axis == door_axis_ENUM.Y) {
-                    float angleY = Mathf.MoveTowardsAngle(transform.localEulerAngles.y, start_dist_or_angle + open_dist_or_angle, open_speed * Time.deltaTime);
-                    transform.localEulerAngles = new Vector3(angleY, 0, 0);
-                    if (transform.localEulerAngles.y == start_dist_or_angle + open_dist_or_angle) Stop_open_close();
-                }
-                else if (door_axis == door_axis_ENUM.Z) {
-                    float angleZ = Mathf.MoveTowardsAngle(transform.localEulerAngles.z, start_dist_or_angle + open_dist_or_angle, open_speed * Time.deltaTime);
-                    transform.localEulerAngles = new Vector3(angleZ, 0, 0);
-                    if (transform.localEulerAngles.z == start_dist_or_angle + open_dist_or_angle) Stop_open_close();
+                else 
+                {
+                    if (door_axis == door_axis_ENUM.X) 
+                    {
+                        float angleX = Mathf.MoveTowardsAngle(transform.localEulerAngles.x, start_dist_or_angle, open_speed * Time.deltaTime);
+                        transform.localEulerAngles = new Vector3(angleX, 0, 0);
+                        if (transform.localEulerAngles.x == start_dist_or_angle) Stop_open_close();
+                    }
+                    else if (door_axis == door_axis_ENUM.Y) 
+                    {
+                        float angleY = Mathf.MoveTowardsAngle(transform.localEulerAngles.y, start_dist_or_angle, open_speed * Time.deltaTime);
+                        transform.localEulerAngles = new Vector3(0, angleY, 0);
+                        if (transform.localEulerAngles.y == start_dist_or_angle) Stop_open_close();
+                    }
+                    else if (door_axis == door_axis_ENUM.Z) 
+                    {
+                        float angleZ = Mathf.MoveTowardsAngle(transform.localEulerAngles.z, start_dist_or_angle, open_speed * Time.deltaTime);
+                        transform.localEulerAngles = new Vector3(0, 0, angleZ);
+                        if (transform.localEulerAngles.z == start_dist_or_angle) Stop_open_close();
+                    }
                 }
             }
         }
-        else {
-            if (open_type == open_type_ENUM.move_to_open) {
-                if (door_axis == door_axis_ENUM.X) {
-                    float posX = Mathf.MoveTowards(transform.localPosition.x, start_dist_or_angle, open_speed * Time.deltaTime);
-                    transform.localPosition = new Vector3(posX, transform.localPosition.y, transform.localPosition.z);
-                    if (transform.localPosition.x == start_dist_or_angle) Stop_open_close();
-                }
-                else if (door_axis == door_axis_ENUM.Y) {
-                    float posY = Mathf.MoveTowards(transform.localPosition.y, start_dist_or_angle, open_speed * Time.deltaTime);
-                    transform.localPosition = new Vector3(transform.localPosition.x, posY, transform.localPosition.z);
-                    if (transform.localPosition.y == start_dist_or_angle) Stop_open_close();
-                }
-                else if (door_axis == door_axis_ENUM.Z) {
-                    float posZ = Mathf.MoveTowards(transform.localPosition.z, start_dist_or_angle, open_speed * Time.deltaTime);
-                    transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, posZ);
-                    if (transform.localPosition.z == start_dist_or_angle) Stop_open_close();
-                }
-            }
-            else {
-                if (door_axis == door_axis_ENUM.X) {
-                    float angleX = Mathf.MoveTowardsAngle(transform.localEulerAngles.x, start_dist_or_angle, open_speed * Time.deltaTime);
-                    transform.localEulerAngles = new Vector3(angleX, 0, 0);
-                    if (transform.localEulerAngles.x == start_dist_or_angle) Stop_open_close();
-                }
-                else if (door_axis == door_axis_ENUM.Y) {
-                    float angleY = Mathf.MoveTowardsAngle(transform.localEulerAngles.y, start_dist_or_angle, open_speed * Time.deltaTime);
-                    transform.localEulerAngles = new Vector3(0, angleY, 0);
-                    if (transform.localEulerAngles.y == start_dist_or_angle) Stop_open_close();
-                }
-                else if (door_axis == door_axis_ENUM.Z) {
-                    float angleZ = Mathf.MoveTowardsAngle(transform.localEulerAngles.z, start_dist_or_angle, open_speed * Time.deltaTime);
-                    transform.localEulerAngles = new Vector3(0, 0, angleZ);
-                    if (transform.localEulerAngles.z == start_dist_or_angle) Stop_open_close();
-                }
-            }
-        }
+    }
+
+    private void OnTriggerStay(Collider other) {
+        if (other.tag == "Player") interaction_image.SetActive(true);
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if (other.tag == "Player") interaction_image.SetActive(false);
     }
 
     public void Open_close() {
