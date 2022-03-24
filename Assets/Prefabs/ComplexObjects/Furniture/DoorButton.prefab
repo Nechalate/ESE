@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5519539073140873777}
   m_Layer: 0
   m_Name: ButtonGlass
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -324,10 +324,10 @@ GameObject:
   - component: {fileID: 2566863010648338051}
   - component: {fileID: 3246843735842474557}
   - component: {fileID: 784074856850569758}
-  - component: {fileID: 5581466877103505830}
+  - component: {fileID: 4369623103063566874}
   m_Layer: 0
   m_Name: DoorButton
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -625,7 +625,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!65 &5581466877103505830
+--- !u!65 &4369623103063566874
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -633,11 +633,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8143897746508091103}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0673726, y: 2.45781, z: 1.7164983}
-  m_Center: {x: 0.25511166, y: -0.22709219, z: -0.9359402}
+  m_Size: {x: 0.36384356, y: 0.55597305, z: 0.0923341}
+  m_Center: {x: 0.14760016, y: 0.24989748, z: -0.04616705}
 --- !u!1 &8955804229670936827
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 7658748450339493772}
   m_Layer: 0
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

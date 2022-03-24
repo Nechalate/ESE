@@ -24,7 +24,7 @@ public class UniversalDoorScript : MonoBehaviour
     private bool open_close_ON;
     public GameObject interaction_image;
     public GameObject player;
-    private Transform _player;
+    public Transform _player;
 
     void Start() {
         if (open_type == open_type_ENUM.move_to_open) {
@@ -43,14 +43,6 @@ public class UniversalDoorScript : MonoBehaviour
     }
 
 /*
-    void OnMouseEnter() {
-        if (gameObject.tag == "Door" && (Vector3.Distance(transform.position, _player.position) <= 5f)) interaction_image.SetActive(true);
-    }
-
-    void OnMouseExit() {
-        if (gameObject.tag == "Door" && (Vector3.Distance(transform.position, _player.position) >= 5f)) interaction_image.SetActive(false);
-    }
-*/
     void OnMouseDown() {
         if (gameObject.tag == "Door" && (Vector3.Distance(transform.position, _player.position) <= 5f)) { 
             if (door_handle) {
@@ -61,7 +53,7 @@ public class UniversalDoorScript : MonoBehaviour
             Open_close();
         }
     }
-
+*/
     void OnMouseUp() {
         if (door_handle) door_handle.transform.localRotation = start_rot;
     }
@@ -161,14 +153,6 @@ public class UniversalDoorScript : MonoBehaviour
                 }
             }
         }
-    }
-
-    private void OnTriggerStay(Collider other) {
-        if (other.tag == "Player") interaction_image.SetActive(true);
-    }
-
-    private void OnTriggerExit(Collider other) {
-        if (other.tag == "Player") interaction_image.SetActive(false);
     }
 
     public void Open_close() {
