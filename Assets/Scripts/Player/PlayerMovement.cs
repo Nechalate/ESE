@@ -3,6 +3,8 @@
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] CharacterController controller;
+    [SerializeField] GameObject playerModel;
+    PlayerAnimations playerAnimScript;
     public Transform groundCheck;
     public LayerMask groundMask;
     [SerializeField] float shiftSpeed = 10f;
@@ -10,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     float emptySpeed;
     [SerializeField] float jumpHeight = 0.4f;
     [SerializeField] AudioClip playerFootsteps;
+    [SerializeField] AudioClip playerFootstepsRun;
     AudioSource audioSource;
 
     float gravity = -9.8f;
@@ -18,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     float groundDistance = 0.4f;
     void Start()
     {
+        playerAnimScript = playerModel.GetComponent<PlayerAnimations>();
         audioSource = GetComponent<AudioSource>();
         emptySpeed = moveSpeed;
     }
@@ -66,9 +70,16 @@ public class PlayerMovement : MonoBehaviour
 
     void FootSound() {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S)) {
-            if (!audioSource.isPlaying) audioSource.PlayOneShot(playerFootsteps);
+            if (!audioSource.isPlaying && !Input.GetKey(KeyCode.LeftShift)) {
+                audioSource.PlayOneShot(playerFootsteps);
+            } 
+            else if (!audioSource.isPlaying && Input.GetKey(KeyCode.LeftShift)) {
+                audioSource.PlayOneShot(playerFootstepsRun);
+            }
         }
-        else audioSource.Stop();
+        else {
+            audioSource.Stop();
+        } 
     }
 
     void Squat() {
