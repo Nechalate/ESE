@@ -171,7 +171,8 @@ public class UniversalDoorScript : MonoBehaviour
         }
         else {
             if (not_opening_sound) not_opening_sound.Play();
-            print("Closed");
+            // add text "door is closed/broken."
+            //print("Closed");
         }
     }
 
