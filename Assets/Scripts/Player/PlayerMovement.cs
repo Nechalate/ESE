@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Jumping() {
-        if (Input.GetButtonDown("Jump") && isGround) {
+        if (Input.GetKeyDown(KeyCode.Space) && isGround) {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }

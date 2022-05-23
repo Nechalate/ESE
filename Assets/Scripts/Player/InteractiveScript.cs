@@ -7,11 +7,11 @@ public class InteractiveScript : MonoBehaviour
     Text _notReady;
     public bool _interact = false;
     bool cheked = false;
-
+/*
     void Awake() {
         _notReady = _noReadyBox.GetComponent<Text>();
     }
-
+*/
     void Update()
     {
         Interact();

@@ -26,6 +26,8 @@ public class UniversalDoorScript : MonoBehaviour
     public GameObject player;
     public Transform _player;
 
+    //public AudioClip close_sound;
+
     void Start() {
         if (open_type == open_type_ENUM.move_to_open) {
             if (door_axis == door_axis_ENUM.X) start_dist_or_angle = transform.localPosition.x;
@@ -40,6 +42,8 @@ public class UniversalDoorScript : MonoBehaviour
         if (door_handle) start_rot = door_handle.transform.localRotation;
 
         _player = player.GetComponent<Transform>();
+
+        //audio_close_sound = GetComponent<AudioSource>();
     }
 
 /*

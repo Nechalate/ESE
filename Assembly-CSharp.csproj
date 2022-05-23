@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Items\Battery\BatteryOn.cs" />
      <Compile Include="Assets\Scripts\Items\Battery\BatteryTaked.cs" />
      <Compile Include="Assets\Scripts\Items\Keys\PickupKey.cs" />
+     <Compile Include="Assets\Scripts\Menu\Eyes.cs" />
      <Compile Include="Assets\Scripts\Menu\PanelIdle.cs" />
      <Compile Include="Assets\Scripts\Menu\SceneLoader\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\Menu\StartGame.cs" />
